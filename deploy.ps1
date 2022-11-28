@@ -8,7 +8,7 @@ if ($args.count -lt 1) {
 npm run build
 
 # Add
-git add dist
+git add .
 
 # Commit
 git commit -m $args[0]
