@@ -4,8 +4,9 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
+  width: 100%;
   font-weight: normal;
+  font-family: 'Roboto';
 }
 
 a,
@@ -21,15 +22,22 @@ a,
   }
 }
 
+body {
+  display: flex;
+  place-items: center;
+}
+
 @media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
+}
+
+
+.v-field__outline__start {
+  border-radius: 4px 0 0 4px;
+}
+.v-field__outline__end {
+  border-radius: 0px 4px 4px 0px;
 }

@@ -1,0 +1,1 @@
+export const REQUEST_AUTH_URL = "https://api.login.yahoo.com/oauth2/request_auth";
