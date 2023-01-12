@@ -7,6 +7,8 @@ if ($args.count -lt 1) {
 # Build
 npm run build
 
+cp dist/index.html dist/404.html
+
 # Add
 git add .
 
