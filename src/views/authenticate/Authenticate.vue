@@ -39,7 +39,6 @@ const authenticate = () => {
         },
         body: "grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey() + "&client_secret=" + decrypt(getSecretKey(), state.password)
     })
-    .then(resp => resp.json())
     .then(resp => console.log(resp))
     .catch(err => {
         console.log(err);
