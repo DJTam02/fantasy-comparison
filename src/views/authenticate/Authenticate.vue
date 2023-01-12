@@ -13,7 +13,7 @@
 </template>
 <script lang="ts" setup>
 import { GET_TOKEN_URL } from '@/constants/authentication';
-import { decrypt, getConsumerKey, getSecretKey } from '@/functions/authentication';
+import { decrypt, getConsumerKey, getSecretKey, getTokenRequestHeader } from '@/functions/authentication';
 import { onMounted, reactive } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import type { AuthenticateState } from './Authenticate.types';
@@ -34,6 +34,7 @@ const authenticate = () => {
         method: 'POST',
         mode: 'no-cors',
         headers: {
+            Authorization: "Basic " + getTokenRequestHeader(state.password),
             'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: "grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey() + "&client_secret=" + decrypt(getSecretKey(), state.password)

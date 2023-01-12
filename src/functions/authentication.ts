@@ -19,3 +19,7 @@ export const getAppID = (): string => {
 export const getConsumerKey = (): string => {
     return import.meta.env.VITE_FANTASY_CONSUMER_KEY;
 };
+
+export const getTokenRequestHeader = (secretKey: string): string => {
+    return CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(getConsumerKey() + ":" + decrypt(getSecretKey(), secretKey)));
+}
