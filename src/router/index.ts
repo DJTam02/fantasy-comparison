@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
-  history: createWebHistory((import.meta.env.PROD ? "/fantasy-comparison" : "") + import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: (import.meta.env.PROD ? "/fantasy-comparison" : "") + "/change-secret",
+      path: "/change-secret",
       name: "changeSecret",
       component: () => import("../views/changeSecret/ChangeSecret.vue")
     },
@@ -14,7 +14,7 @@ const router = createRouter({
       component: () => import("../views/home/Home.vue")
     },
     {
-      path: (import.meta.env.PROD ? "/fantasy-comparison" : "") + "/authenticate",
+      path: "/authenticate",
       name: "authenticate",
       component: () => import("../views/authenticate/Authenticate.vue")
     },
