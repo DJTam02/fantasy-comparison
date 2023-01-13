@@ -9,6 +9,10 @@
   font-family: 'Roboto';
 }
 
+html {
+  overflow: hidden;
+}
+
 a,
 .green {
   text-decoration: none;

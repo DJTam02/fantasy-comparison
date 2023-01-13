@@ -33,10 +33,11 @@ const authenticate = () => {
     const reqBody = {
         'grant_type': 'authorization_code',
         'redirect_uri': 'oob',
-        code: route.query.code?.toString,
+        code: route.query.code?.toString() ?? "",
         'client_id': getConsumerKey(),
         'client_secret': decrypt(getSecretKey(), state.password)
     };
+    console.log(Object.keys(reqBody).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(reqBody[key as keyof typeof reqBody])).join('&'));
     fetch(GET_TOKEN_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -44,7 +45,7 @@ const authenticate = () => {
             Authorization: "Basic " + getTokenRequestHeader(state.password),
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: Object.keys(reqBody).map(([key, value]) => encodeURIComponent(key) + "=" + encodeURIComponent(value)).join('&')
+        body: Object.keys(reqBody).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(reqBody[key as keyof typeof reqBody])).join('&')
         //body: "grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey() + "&client_secret=" + decrypt(getSecretKey(), state.password)
     })
     .then(resp => console.log(resp))
