@@ -11,3 +11,5 @@ export const HASH_METHOD = "S256";
 
 export const CODE_VERIFIER_MAX_LENGTH = 128;
 export const CODE_VERIFIER_MIN_LENGTH = 43;
+
+export const VERIFIER_KEY_NAME = "verifier";

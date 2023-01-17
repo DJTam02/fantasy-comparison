@@ -12,7 +12,7 @@
     <button @click="authenticate">Submit</button>
 </template>
 <script lang="ts" setup>
-import { GET_TOKEN_URL } from '@/constants/authentication';
+import { GET_TOKEN_URL, VERIFIER_KEY_NAME } from '@/constants/authentication';
 import { decrypt, getConsumerKey, getSecretKey, getTokenRequestHeader } from '@/functions/authentication';
 import { onMounted, reactive } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
@@ -59,7 +59,7 @@ const authenticate = () => {
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
     //myHeaders.append("Access-Control-Allow-Origin", "*")
 
-    var raw = "grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey();
+    var raw = "grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey() + "&code_verifier=" + sessionStorage.getItem(VERIFIER_KEY_NAME);
 
     var requestOptions: RequestInit = {
         method: 'POST',
