@@ -55,10 +55,11 @@ const authenticate = () => {
     //     router.push("/")
     // })
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Basic ZGoweUptazlURTgwYUdVMVNFdEdOak5CSm1ROVdWZHJPVlpWWkZwTk1IUnFXbGRyYldOSGJ6bE5RVDA5Sm5NOVkyOXVjM1Z0WlhKelpXTnlaWFFtYzNZOU1DWjRQVGd5OjczZDJiNzI2ZjU0MGU1OTE1YjAwNmY4NTc2ZjYyNzAwZTJmMTFmNGY=");
+    //myHeaders.append("Authorization", "Basic ZGoweUptazlURTgwYUdVMVNFdEdOak5CSm1ROVdWZHJPVlpWWkZwTk1IUnFXbGRyYldOSGJ6bE5RVDA5Sm5NOVkyOXVjM1Z0WlhKelpXTnlaWFFtYzNZOU1DWjRQVGd5OjczZDJiNzI2ZjU0MGU1OTE1YjAwNmY4NTc2ZjYyNzAwZTJmMTFmNGY=");
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+    //myHeaders.append("Access-Control-Allow-Origin", "*")
 
-    var raw = "grant_type=authorization_code&redirect_uri=oob&code=bpu2sccfw5amch6e7ekdmjxseect8dwd&client_id=dj0yJmk9TE80aGU1SEtGNjNBJmQ9WVdrOVZVZFpNMHRqWldrbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTgy&client_secret=73d2b726f540e5915b006f8576f62700e2f11f4f";
+    var raw = "grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey();
 
     var requestOptions: RequestInit = {
         method: 'POST',
