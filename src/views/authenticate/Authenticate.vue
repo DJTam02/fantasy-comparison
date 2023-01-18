@@ -65,10 +65,10 @@ const authenticate = () => {
         method: 'POST',
         headers: myHeaders,
         body: raw,
-        redirect: 'follow'
+        redirect: 'follow',
     };
 
-    fetch("https://api.login.yahoo.com/oauth2/get_token", requestOptions)
+    fetch("https://proxy.cors.sh/https://api.login.yahoo.com/oauth2/get_token", requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
