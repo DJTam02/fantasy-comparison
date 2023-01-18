@@ -61,7 +61,7 @@ const authenticate = () => {
     //myHeaders.append("Access-Control-Allow-Origin", "*")
 
     var raw = "grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey() + "&code_verifier=" + sessionStorage.getItem(VERIFIER_KEY_NAME);
-
+    console.log(raw);
     var requestOptions: RequestInit = {
         method: 'POST',
         headers: myHeaders,

@@ -18,6 +18,7 @@ const state = reactive({
 const authenticate = () => {
     //console.log(REQUEST_AUTH_URL + "?response_type=code&redirect_uri=" + encodeURIComponent(REDIRECT_URI) + "&client_id=" + getConsumerKey())
     const verifier = getCodeVerifier();
+    console.log(verifier);
     sessionStorage.setItem(VERIFIER_KEY_NAME, verifier);
     window.location.href = REQUEST_AUTH_URL + 
     "?response_type=code&redirect_uri=" + encodeURIComponent(REDIRECT_URI) + 
