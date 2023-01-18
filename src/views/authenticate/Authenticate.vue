@@ -54,6 +54,7 @@ const authenticate = () => {
     //     console.log(err);
     //     router.push("/")
     // })
+    console.log(route.query.code);
     var myHeaders = new Headers();
     //myHeaders.append("Authorization", "Basic ZGoweUptazlURTgwYUdVMVNFdEdOak5CSm1ROVdWZHJPVlpWWkZwTk1IUnFXbGRyYldOSGJ6bE5RVDA5Sm5NOVkyOXVjM1Z0WlhKelpXTnlaWFFtYzNZOU1DWjRQVGd5OjczZDJiNzI2ZjU0MGU1OTE1YjAwNmY4NTc2ZjYyNzAwZTJmMTFmNGY=");
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
