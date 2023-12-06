@@ -16,6 +16,8 @@ import { GET_TOKEN_URL, VERIFIER_KEY_NAME } from '@/constants/authentication';
 import { decrypt, getConsumerKey, getSecretKey, getTokenRequestHeader } from '@/functions/authentication';
 import { onMounted, reactive } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+import { YahooFantasy } from 'yahoo-fantasy';
+import "../../types/YahooFantasy"
 import type { AuthenticateState } from './Authenticate.types';
 
 const route = useRoute();
