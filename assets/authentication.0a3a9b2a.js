@@ -1,1 +1,0 @@
-const t="https://api.login.yahoo.com/oauth2/request_auth",a="https://api.login.yahoo.com/oauth2/get_token",o="refresh_token",s="access_token",c="https://jacobtam.ca/fantasy-comparison/authenticate";export{s as A,a as G,o as R,t as a,c as b};
