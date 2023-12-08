@@ -1,0 +1,1 @@
+const o="https://api.login.yahoo.com/oauth2/request_auth",t="https://api.login.yahoo.com/oauth2/get_token",a="refresh_token",s="access_token",e=window.location.href+"authenticate";export{s as A,t as G,a as R,o as a,e as b};
