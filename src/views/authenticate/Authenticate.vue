@@ -53,7 +53,7 @@ const authenticate = () => {
   .then(resp => console.log("resp: ", resp))
   .catch(err => {
       console.log(err);
-      router.push("/")
+      router.push("/");
   })
   // console.log(route.query.code);
   // var myHeaders = new Headers();
