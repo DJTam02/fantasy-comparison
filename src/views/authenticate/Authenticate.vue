@@ -13,7 +13,7 @@
   <button @click="authenticate">Submit</button>
 </template>
 <script lang="ts" setup>
-import { GET_TOKEN_URL, VERIFIER_KEY_NAME } from "@/constants/authentication";
+import { GET_TOKEN_URL, REDIRECT_URI, VERIFIER_KEY_NAME } from "@/constants/authentication";
 import {
   decrypt,
   getConsumerKey,
@@ -34,7 +34,7 @@ const authenticate = () => {
   console.log("grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey() + "&client_secret=" + decrypt(getSecretKey(), state.password))
   const reqBody = {
       'grant_type': 'authorization_code',
-      'redirect_uri': 'oob',
+      'redirect_uri': REDIRECT_URI,
       code: route.query.code?.toString() ?? "",
       'client_id': getConsumerKey(),
       'client_secret': decrypt(getSecretKey(), state.password)
@@ -51,7 +51,7 @@ const authenticate = () => {
       redirect: "follow",
       //body: "grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey() + "&client_secret=" + decrypt(getSecretKey(), state.password)
   })
-  .then(resp => console.log(resp))
+  .then(resp => console.log("resp: ", resp))
   .catch(err => {
       console.log(err);
       router.push("/")
