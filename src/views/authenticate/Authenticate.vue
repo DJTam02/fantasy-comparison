@@ -40,14 +40,13 @@ const authenticate = () => {
       'client_secret': decrypt(getSecretKey(), state.password)
   };
   console.log(Object.keys(reqBody).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(reqBody[key as keyof typeof reqBody])).join('&'));
-  fetch(import.meta.env.VUE_APP_API_URL + "/auth" + GET_TOKEN_URL, {
+  fetch("https://9blo7mhtqd.execute-api.us-east-2.amazonaws.com/Test/proxy", {
       method: 'POST',
       headers: {
           Authorization: "Basic " + getTokenRequestHeader(state.password),
           'Content-Type': 'application/x-www-form-urlencoded'
       },
       body: Object.keys(reqBody).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(reqBody[key as keyof typeof reqBody])).join('&'),
-      redirect: "follow",
       //body: "grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey() + "&client_secret=" + decrypt(getSecretKey(), state.password)
   })
   .then(resp => console.log("resp: ", resp))

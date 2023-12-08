@@ -36,24 +36,17 @@ const authenticate = () => {
   // const verifier = getCodeVerifier();
   // console.log(verifier);
   // sessionStorage.setItem(VERIFIER_KEY_NAME, verifier);
-  // window.location.href =
-  //   REQUEST_AUTH_URL +
-  //   "?response_type=code&redirect_uri=" +
-  //   encodeURIComponent(REDIRECT_URI) +
-  //   "&client_id=" +
-  //    getConsumerKey() //+
+  window.location.href =
+    REQUEST_AUTH_URL +
+    "?response_type=code&redirect_uri=" +
+    encodeURIComponent(REDIRECT_URI) +
+    "&client_id=" +
+     getConsumerKey() //+
     // "&code_challenge=" +
     // getCodeChallenge(verifier) +
     // "&code_challenge_method=" +
     // HASH_METHOD;
-    fetch("https://9blo7mhtqd.execute-api.us-east-2.amazonaws.com/Test", {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    })
-    .then(resp => console.log(resp))
-    .catch(err => console.log(err));
+
 };
 
 onMounted(() => {
