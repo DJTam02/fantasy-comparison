@@ -34,7 +34,7 @@ const authenticate = () => {
   console.log("grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey() + "&client_secret=" + decrypt(getSecretKey(), state.password))
   const reqBody = {
       'grant_type': 'authorization_code',
-      'redirect_uri': 'oob',
+      'redirect_uri': REDIRECT_URI,
       code: route.query.code?.toString() ?? "",
       'client_id': getConsumerKey(),
       'client_secret': decrypt(getSecretKey(), state.password)
