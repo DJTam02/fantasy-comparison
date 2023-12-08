@@ -36,29 +36,29 @@ const authenticate = () => {
   // const verifier = getCodeVerifier();
   // console.log(verifier);
   // sessionStorage.setItem(VERIFIER_KEY_NAME, verifier);
-  // window.location.href =
-  //   REQUEST_AUTH_URL +
-  //   "?response_type=code&redirect_uri=" +
-  //   encodeURIComponent(REDIRECT_URI) +
-  //   "&client_id=" +
-  //    getConsumerKey() //+
+  window.location.href =
+    REQUEST_AUTH_URL +
+    "?response_type=code&redirect_uri=" +
+    encodeURIComponent(REDIRECT_URI) +
+    "&client_id=" +
+     getConsumerKey() //+
     // "&code_challenge=" +
     // getCodeChallenge(verifier) +
     // "&code_challenge_method=" +
     // HASH_METHOD;
-    fetch("https://q3qcnfhw9c.execute-api.us-east-2.amazonaws.com/Test/proxy", {
-      method: 'POST',
-      headers: {
-          //Authorization: "Basic " + getTokenRequestHeader(state.password),
-          'Content-Type': 'application/x-www-form-urlencoded'
-      },
+    // fetch("https://q3qcnfhw9c.execute-api.us-east-2.amazonaws.com/Test/proxy", {
+    //   method: 'POST',
+    //   headers: {
+    //       //Authorization: "Basic " + getTokenRequestHeader(state.password),
+    //       'Content-Type': 'application/x-www-form-urlencoded'
+    //   },
       //body: "grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey() + "&client_secret=" + decrypt(getSecretKey(), state.password)
-  })
-  .then(resp => console.log("resp: ", resp))
-  .catch(err => {
-      console.log(err);
-      router.push("/");
-  })
+  // })
+  // .then(resp => console.log("resp: ", resp))
+  // .catch(err => {
+  //     console.log(err);
+  //     router.push("/");
+  // })
 };
 
 onMounted(() => {

@@ -40,7 +40,7 @@ const authenticate = () => {
       'client_secret': decrypt(getSecretKey(), state.password)
   };
   console.log(Object.keys(reqBody).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(reqBody[key as keyof typeof reqBody])).join('&'));
-  fetch("https://9blo7mhtqd.execute-api.us-east-2.amazonaws.com/Test1/proxy", {
+  fetch("https://q3qcnfhw9c.execute-api.us-east-2.amazonaws.com/Test/proxy", {
       method: 'POST',
       headers: {
           //Authorization: "Basic " + getTokenRequestHeader(state.password),
