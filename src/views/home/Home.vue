@@ -41,7 +41,7 @@ const authenticate = () => {
     "?response_type=code&redirect_uri=" +
     encodeURIComponent(REDIRECT_URI) +
     "&client_id=" +
-    getConsumerKey() //+
+  //   getConsumerKey() //+
     // "&code_challenge=" +
     // getCodeChallenge(verifier) +
     // "&code_challenge_method=" +

@@ -40,7 +40,7 @@ const authenticate = () => {
       'client_secret': decrypt(getSecretKey(), state.password)
   };
   console.log(Object.keys(reqBody).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(reqBody[key as keyof typeof reqBody])).join('&'));
-  fetch(GET_TOKEN_URL, {
+  fetch("/auth" + GET_TOKEN_URL, {
       method: 'POST',
       headers: {
           Authorization: "Basic " + getTokenRequestHeader(state.password),

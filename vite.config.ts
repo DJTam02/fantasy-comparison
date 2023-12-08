@@ -6,6 +6,14 @@ import vue from "@vitejs/plugin-vue";
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
+    proxy: {
+      '/auth': {
+        target: 'https://api.login.yahoo.com/oauth2',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path: string) => path.replace(/^\/api/, '')
+      }
+    },
     cors: false,
   },
   plugins: [vue()],
