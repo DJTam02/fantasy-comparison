@@ -6,17 +6,17 @@ const router = createRouter({
     {
       path: "/change-secret",
       name: "changeSecret",
-      component: () => import("../views/changeSecret/ChangeSecret.vue")
+      component: () => import("../views/changeSecret/ChangeSecret.vue"),
     },
     {
       path: "/",
       name: "home",
-      component: () => import("../views/home/Home.vue")
+      component: () => import("../views/home/Home.vue"),
     },
     {
       path: "/authenticate",
       name: "authenticate",
-      component: () => import("../views/authenticate/Authenticate.vue")
+      component: () => import("../views/authenticate/Authenticate.vue"),
     },
     // {
     //   path: "/",
