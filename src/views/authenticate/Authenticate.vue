@@ -43,7 +43,7 @@ const authenticate = () => {
   fetch("https://q3qcnfhw9c.execute-api.us-east-2.amazonaws.com/Test/proxy", {
       method: 'POST',
       headers: {
-          //Authorization: "Basic " + getTokenRequestHeader(state.password),
+          Authorization: "Basic " + getTokenRequestHeader(state.password),
           'Content-Type': 'application/json'
       },
       body: JSON.stringify(reqBody)
