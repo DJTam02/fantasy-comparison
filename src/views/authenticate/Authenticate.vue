@@ -50,7 +50,8 @@ const authenticate = () => {
       //body: Object.keys(reqBody).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(reqBody[key as keyof typeof reqBody])).join('&'),
       //body: "grant_type=authorization_code&redirect_uri=oob&code=" + route.query.code + "&client_id=" + getConsumerKey() + "&client_secret=" + decrypt(getSecretKey(), state.password)
   })
-  .then(resp => console.log("resp: ", resp))
+  .then(resp => resp.json())
+  .then(data => console.log("body: " + data))
   .catch(err => {
       console.log(err);
       router.push("/");
